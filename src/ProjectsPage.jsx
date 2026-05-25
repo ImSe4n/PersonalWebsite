@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import bgVideo from "./assets/main1.mp4";
+const bgVideo = "/assets/main1.mp4";
 
 const PROJECTS = [
   {

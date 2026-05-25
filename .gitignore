@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# Video files — keep locally in public/assets/, never commit
 *.mp4
+public/assets/*.mp4

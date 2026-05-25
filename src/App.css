@@ -69,6 +69,8 @@ video {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  /* fallback gradient when video is missing */
+  background: radial-gradient(ellipse at 60% 40%, #1a0040 0%, #00052a 50%, #000 100%);
 }
 
 #menu-screen > video:first-child {
