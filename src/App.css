@@ -41,7 +41,6 @@ body {
   width: 24px; height: 24px;
   border-color: rgba(255, 60, 60, 1);
 }
-
 .cursor-dot {
   position: fixed;
   top: 0; left: 0;
@@ -58,27 +57,74 @@ body {
   transform: rotate(45deg) scale(0.6);
 }
 
-/* ── Video quality enhancement ── */
-video {
-  filter: contrast(1.06) saturate(1.1) brightness(1.02);
-}
-
 /* ── Pages ── */
 #menu-screen {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* fallback gradient when video is missing */
-  background: radial-gradient(ellipse at 60% 40%, #1a0040 0%, #00052a 50%, #000 100%);
 }
 
-#menu-screen > video:first-child {
+/* ── Animated gradient backgrounds ── */
+.animated-bg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.animated-bg--home {
+  background:
+    radial-gradient(ellipse 90% 70% at 72% 50%, rgba(196,0,26,0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 12% 75%, rgba(40,0,70,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 50% 10%, rgba(100,0,20,0.15) 0%, transparent 50%),
+    linear-gradient(160deg, #0c0008 0%, #10090f 50%, #06040c 100%);
+  animation: bg-breathe 10s ease-in-out infinite alternate;
+}
+
+.animated-bg--about {
+  background:
+    radial-gradient(ellipse 75% 55% at 22% 52%, rgba(0,180,220,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 70% at 80% 28%, rgba(30,0,90,0.3) 0%, transparent 55%),
+    linear-gradient(160deg, #040818 0%, #070f28 55%, #030610 100%);
+  animation: bg-breathe 11s ease-in-out infinite alternate;
+}
+
+.animated-bg--resume {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 42%, rgba(0,71,255,0.22) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 50% at 88% 70%, rgba(0,180,255,0.14) 0%, transparent 50%),
+    linear-gradient(160deg, #020614 0%, #040c22 55%, #020510 100%);
+  animation: bg-breathe 12s ease-in-out infinite alternate;
+}
+
+.animated-bg--socials {
+  background:
+    radial-gradient(ellipse 72% 60% at 28% 52%, rgba(160,0,200,0.2) 0%, transparent 58%),
+    radial-gradient(ellipse 50% 65% at 78% 28%, rgba(255,0,80,0.12) 0%, transparent 48%),
+    linear-gradient(160deg, #070412 0%, #0c0820 55%, #040310 100%);
+  animation: bg-breathe 9s ease-in-out infinite alternate;
+}
+
+.animated-bg--projects {
+  background:
+    radial-gradient(ellipse 72% 55% at 68% 46%, rgba(120,30,220,0.22) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 65% at 22% 65%, rgba(60,0,130,0.28) 0%, transparent 52%),
+    linear-gradient(160deg, #060212 0%, #0d0522 55%, #03030e 100%);
+  animation: bg-breathe 13s ease-in-out infinite alternate;
+}
+
+.animated-bg--contact {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 45%, rgba(196,0,26,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 65% at 15% 70%, rgba(80,0,20,0.3) 0%, transparent 52%),
+    linear-gradient(160deg, #0d0006 0%, #120008 55%, #06000a 100%);
+  animation: bg-breathe 10s ease-in-out infinite alternate;
+}
+
+@keyframes bg-breathe {
+  from { filter: brightness(0.92); }
+  to   { filter: brightness(1.14); }
 }
 
 #main {
