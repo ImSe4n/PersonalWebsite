@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 body {
@@ -9,6 +10,60 @@ body {
   overflow: hidden;
 }
 
+/* ── Subtle scanline CRT overlay ── */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 99997;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ── Custom cursor ── */
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 2px solid rgba(196, 0, 26, 0.75);
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 99999;
+  transition: width 0.15s ease, height 0.15s ease, border-color 0.15s ease;
+  will-change: left, top;
+}
+.cursor-ring.pressed {
+  width: 24px; height: 24px;
+  border-color: rgba(255, 60, 60, 1);
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: #c4001a;
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 99999;
+  transition: transform 0.1s ease, background 0.1s ease;
+  will-change: left, top;
+}
+.cursor-dot.pressed {
+  background: #ff3c3c;
+  transform: rotate(45deg) scale(0.6);
+}
+
+/* ── Video quality enhancement ── */
+video {
+  filter: contrast(1.06) saturate(1.1) brightness(1.02);
+}
+
+/* ── Pages ── */
 #menu-screen {
   position: relative;
   width: 100vw;
@@ -16,7 +71,7 @@ body {
   overflow: hidden;
 }
 
-#menu-screen video {
+#menu-screen > video:first-child {
   position: absolute;
   inset: 0;
   width: 100%;

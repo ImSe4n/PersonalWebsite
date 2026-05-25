@@ -241,7 +241,14 @@ export default function P3Menu({ onNavigate }) {
                   marginTop: item.offsetY,
                   transitionDelay: mounted ? `${i * 80}ms` : "0ms",
                 }}
-                onClick={(e) => { e.preventDefault(); onNavigate?.(item.page); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (item.page === 'github') {
+                    window.open('https://github.com/YOUR_USERNAME', '_blank');
+                  } else {
+                    onNavigate?.(item.page);
+                  }
+                }}
                 onMouseEnter={() => activate(i)}
                 aria-current={isActive ? "page" : undefined}
               >
