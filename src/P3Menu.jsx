@@ -120,6 +120,35 @@ export default function P3Menu({ onNavigate }) {
         .p3-label-bright { color: #ff2a2a; position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity 0.12s ease; }
         .p3-row.active .p3-label-bright { opacity: 1; }
 
+        /* ── Top bar ── */
+        .p3-topbar {
+          position: absolute; top: 0; left: 0; right: 0; z-index: 25;
+          height: 42px; display: flex; align-items: center; gap: 10px;
+          padding: 0 22px 0 18px;
+          background: rgba(0,0,0,0.55);
+          border-bottom: 1px solid rgba(196,0,26,0.3);
+          backdrop-filter: blur(6px);
+          pointer-events: none; user-select: none;
+          justify-content: space-between;
+        }
+        .p3-topbar-left {
+          display: flex; align-items: center; gap: 10px;
+        }
+        .p3-topbar-name {
+          font-family: 'Anton', sans-serif; font-size: 18px;
+          letter-spacing: 3px; color: rgba(255,255,255,0.88);
+          font-style: italic;
+        }
+        .p3-topbar-sep { color: #c4001a; font-size: 9px; }
+        .p3-topbar-sub {
+          font-family: 'Bebas Neue', sans-serif; font-size: 13px;
+          letter-spacing: 4px; color: rgba(255,255,255,0.28);
+        }
+        .p3-topbar-right {
+          font-family: 'Bebas Neue', sans-serif; font-size: 11px;
+          letter-spacing: 3px; color: rgba(255,255,255,0.18);
+        }
+
         /* ── Name tag ── */
         .p3-name-tag {
           position: absolute; top: 18px; left: 22px; z-index: 20;
@@ -190,6 +219,15 @@ export default function P3Menu({ onNavigate }) {
       `}</style>
 
       <div className="p3-overlay">
+        <div className="p3-topbar">
+          <div className="p3-topbar-left">
+            <span className="p3-topbar-name">SEAN NIE</span>
+            <span className="p3-topbar-sep">◆</span>
+            <span className="p3-topbar-sub">PERSONAL PORTFOLIO</span>
+          </div>
+          <span className="p3-topbar-right">2025</span>
+        </div>
+
         <div className="p3-name-tag">
           <span>sean's</span>
           <span>portfolio</span>

@@ -6,8 +6,8 @@ const CONTACT_ITEMS = [
   {
     id: "email",
     label: "EMAIL",
-    value: "eric.nie2006@gmail.com",
-    href: "mailto:eric.nie2006@gmail.com",
+    value: "snie7638@gmail.com",
+    href: "mailto:snie7638@gmail.com",
     color: "#ff6b6b",
     desc: "Send me a message",
   },
@@ -22,18 +22,18 @@ const CONTACT_ITEMS = [
   {
     id: "linkedin",
     label: "LINKEDIN",
-    value: "Add your LinkedIn",
-    href: "https://linkedin.com/in/yourname",
+    value: "linkedin.com/in/sean-nie",
+    href: "https://www.linkedin.com/in/sean-nie-620872314/",
     color: "#0a8fd8",
     desc: "Connect professionally",
   },
   {
-    id: "discord",
-    label: "DISCORD",
-    value: "@yourhandle",
-    href: "#",
-    color: "#7289da",
-    desc: "Chat with me",
+    id: "phone",
+    label: "PHONE",
+    value: "613-823-7121",
+    href: "tel:6138237121",
+    color: "#00ff88",
+    desc: "Call or text me",
   },
 ];
 
